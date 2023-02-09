@@ -4,6 +4,7 @@ const { prepareWAMessageMedia, proto, generateWAMessageFromContent, getLastMessa
 
 let handler  = async (m, { conn, args, text, command, usedPrefix, participants }) => {
     
+let thumb = `https://cdn.jsdelivr.net/gh/Guru322/GURU-BOT@main/Guru.jpg`
 let from 
 if (text) from = `${text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'}`;
 if (!text) from = `${m.chat}`;
@@ -46,7 +47,7 @@ var order = generateWAMessageFromContent(from, proto.Message.fromObject({
 "status": "INQUIRY",
 "surface": "CATALOG",
 "message": `© ...`,
-"jpegThumbnail": imagen4,
+"jpegThumbnail": thumb,
 "orderTitle": `© 😋`,
 "sellerJid": "593991398786@s.whatsapp.net",
 "token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
@@ -79,7 +80,7 @@ var liveLocation = generateWAMessageFromContent(from, proto.Message.fromObject({
 "degreesLongitude": 107.7228574,
 "caption": `© Guru`,
 "sequenceNumber": "1657237469254001",
-"jpegThumbnail": imagen4,
+"jpegThumbnail": thumb,
 }}), { userJid: from, quoted: doc })
 await conn.relayMessage(from, liveLocation.message, { messageId: liveLocation.key.id })} 
 break 
